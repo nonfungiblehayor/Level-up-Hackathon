@@ -38,6 +38,13 @@ header input {
     background-size: 20px;
     background-position-x: 10px;
 }
+input:hover {
+    border: 1px solid var(--stroke-s-100, #E1E1E1);;
+}
+input:focus {
+    border: 2px solid var(--White, #FFF);
+    outline: 2px solid var(--White, #FFF);;
+}
 a {
     text-decoration: none;
 }
@@ -65,6 +72,12 @@ a {
     align-items: center;
     padding: 10px 15px;
     border-radius: 8px;
+}
+.profile-div .username:hover, .alarm:hover {
+    background: var(--font-mid-2, #616161);
+}
+.profile-div .username:focus, .alarm:focus {
+    background: var(--grey-grey-50, #656266);
 }
 .user_dp {
     background-color: #36FBA1;
@@ -115,6 +128,13 @@ a {
     color: #323232;
     font-size: 12px;
     font-weight: 600;
+}
+.select-plan button:hover {
+    background-color: #E7E7E7;
+}
+.select-plan button:focus {
+    border: 2px solid var(--states-focused, #005BD3);
+    background: #FFF;
 }
 .setup-guide {
     background-color: #fff;
@@ -228,6 +248,9 @@ a {
     color: #F6F3F6;
     font-size: 12px;
     font-weight: 600;
+}
+.setup-content-text button:hover {
+    background-color: #2A2A2A;
 }
 .setup-content-text button:nth-of-type(2) {
     background-color: transparent;
@@ -381,6 +404,7 @@ a {
         padding: 5px;
         padding-left: 35px;
         margin-right: 5px;
+        outline: none;
     }
     .profile-div .username {
         display: none;

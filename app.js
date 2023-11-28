@@ -64,5 +64,16 @@ const markPanel = (nextPanel, currentPanel, event, width) => {
             spanProgress[0].innerHTML = `${5 - 1} / 5 completed`
         }
         progress[0].style.width = `${width}px`
+    } else if(unmark[currentPanel].style.display === 'flex') {
+        mark[currentPanel].style.display = 'flex'
+        unmark[currentPanel].style.display = 'none'
+        target[nextPanel].style.display = 'flex'
+        target[currentPanel].style.display = 'none'
+        spanProgress[0].innerHTML = `${currentPanel + 1} / 5 completed` 
+        progress[0].style.width = `${width}px`
+        console.log(20)
+        if(currentPanel === 4) {
+            target[currentPanel].style.display = 'flex'
+        }
     }
 }
