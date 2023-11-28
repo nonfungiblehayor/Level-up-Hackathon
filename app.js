@@ -37,16 +37,20 @@ const showPanel = (panel) => {
     target[panel].style.display = 'flex'
 }
 
-const markPanel = (nextPanel, currentPanel, event) => {
+const markPanel = (nextPanel, currentPanel, event, width) => {
     const mark = document.getElementsByClassName('mark')
     const unmark = document.getElementsByClassName('unmark')
     const target = document.getElementsByClassName('setup-content')
+    const spanProgress = document.getElementsByClassName('progress-number')
+    const progress = document.getElementsByClassName('actual-progress')
     event.stopPropagation()
     if(unmark[currentPanel].style.display === '') {
         mark[currentPanel].style.display = 'flex'
         unmark[currentPanel].style.display = 'none'
         target[nextPanel].style.display = 'flex'
         target[currentPanel].style.display = 'none'
+        spanProgress[0].innerHTML = `${currentPanel + 1} / 5 completed` 
+        progress[0].style.width = `${width}px`
         if(currentPanel === 4) {
             target[currentPanel].style.display = 'flex'
         }
@@ -55,5 +59,10 @@ const markPanel = (nextPanel, currentPanel, event) => {
         unmark[currentPanel].style.display = 'flex'
         target[nextPanel].style.display = 'none'
         target[currentPanel].style.display = 'flex'
+        spanProgress[0].innerHTML = `${nextPanel - 1} / 5 completed`
+        if(currentPanel === 4) {
+            spanProgress[0].innerHTML = `${5 - 1} / 5 completed`
+        }
+        progress[0].style.width = `${width}px`
     }
 }

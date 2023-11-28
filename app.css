@@ -166,7 +166,7 @@ a {
     border-radius: 4px;
 }
 .progress span {
-    width: 18px;
+    width: 0px;
     height: 4px;
     background-color: #000;
     border-radius: 4px;
